@@ -1,0 +1,36 @@
+lib_component_agent_of_deleting_sc_element_from_draft
+=> nrel_main_idtf:
+	[Компонент библиотеки. sc-агент удаления sc-элемента из черновика]
+	(* <- lang_ru;; *);
+	[Library component. sc-agent of deleting sc-elements from draft]
+	(* <- lang_en;; *);
+
+<- library_of_platform_independent_reusable_components; 
+<- library_of_atomic_reusable_components; 
+
+=> nrel_attendant_component: 
+	lib_component_ui_menu_file_for_deleting_sc_element_from_draft;
+
+-> rrel_key_sc_element: 
+	.platform_independent_realization_of_sc_agent_of_deleting_sc_element_from_draft; 
+
+<- rrel_key_sc_element: 
+	...
+	(*
+	<- explanation;;
+	<= nrel_sc_text_translation:
+		...
+		(*
+		-> rrel_example:
+			"file://htmls/Agent_of_deleting_sc_element_from_draft.html"
+				(* <- lang_ru;; *);; 
+		*);;
+	*);;
+
+action_of_deleting_sc_elements_from_draft
+<- sc_node_not_relation;
+=> nrel_main_idtf:
+	[действие. удалить sc-элемент из черновик]
+ 	(* <- lang_ru;; *);
+ 	[action. delete sc-element from draft]
+ 	(* <- lang_en;; *);; 

@@ -1,0 +1,146 @@
+scp_program -> proc_delete_sc_element_from_draft
+(*
+  	-> rrel_params: .proc_delete_sc_element_from_draft_params 
+	(*
+		-> rrel_1: rrel_in: _sc_element;;
+		-> rrel_2: rrel_in: _draft;;
+    *);;
+
+	-> rrel_operators: .proc_delete_sc_element_from_draft_operator_set
+    (*
+		-> rrel_init: .proc_delete_sc_element_from_draft_operator0
+		(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _draft;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_erase;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _sc_element;;
+
+			=> nrel_then: .proc_delete_sc_element_from_draft_operator1;;
+			=> nrel_else: .proc_delete_sc_element_from_draft_operator_return;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator1
+		(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc_erase;;
+
+             => nrel_goto: .proc_delete_sc_element_from_draft_operator1_1;;
+		*);;
+
+	 	-> .proc_delete_sc_element_from_draft_operator1_1
+	 	(*
+	 		<- genEl;;
+	 		-> rrel_1: rrel_assign: rrel_scp_var: rrel_node: rrel_const: _incident_arcs;;
+
+	 		=> nrel_goto: .proc_delete_sc_element_from_draft_operator2;;
+	 	*);;
+
+		-> .proc_delete_sc_element_from_draft_operator2
+		(*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _sc_element;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _node1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_var: _draft;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _incident_arcs;;
+
+			=> nrel_goto: .proc_delete_sc_element_from_draft_operator3;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator3
+		(*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _node_1;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _sc_element;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_var: _draft;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _incident_arcs;;
+
+			=> nrel_goto: .proc_delete_sc_element_from_draft_operator4;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator4
+		(*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _sc_element;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: rrel_arc: _node1;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_var: _draft;;
+
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _incident_arcs;;
+
+			=> nrel_goto: .proc_delete_sc_element_from_draft_operator5;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator5
+		(*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_arc: _node_1;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _sc_element;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_var: _draft;;
+
+			-> rrel_set_1: rrel_fixed: rrel_scp_var: _incident_arcs;;
+
+			=> nrel_goto: .proc_delete_sc_element_from_draft_operator6;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator6
+		(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _incident_arcs;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _arc_erase;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _current_arc;;
+
+			=> nrel_then: .proc_delete_sc_element_from_draft_operator8;;
+			=> nrel_else: .proc_delete_sc_element_from_draft_operator7;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator7
+		(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _incident_arcs;;
+
+             => nrel_goto: .proc_delete_sc_element_from_draft_operator_return;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator8
+		(*
+			<- eraseEl;;
+			-> rrel_1: rrel_fixed: rrel_erase: rrel_scp_var: _arc_erase;;
+
+             => nrel_goto: .proc_delete_sc_element_from_draft_operator9;;
+		*);;
+
+        -> .proc_delete_sc_element_from_draft_operator9
+		(*
+		  	<- call;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_const: proc_delete_sc_element_from_draft;;
+		  	-> rrel_2: rrel_fixed: rrel_scp_const: .proc_delete_sc_element_from_draft_operator_call_proc_delete_sc_element_from_draft
+			(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _current_arc;;
+				-> rrel_2: rrel_fixed: rrel_scp_var: _draft;;
+			*);;
+		  	-> rrel_3: rrel_assign: rrel_scp_var: _descr1;;
+
+		  	=> nrel_goto: .proc_delete_sc_element_from_draft_operator10;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator10
+		(*
+		  	<- waitReturn;;
+		  	-> rrel_1: rrel_fixed: rrel_scp_var: _descr1;;
+
+		  	=> nrel_goto: .proc_delete_sc_element_from_draft_operator6;;
+		*);;
+
+		-> .proc_delete_sc_element_from_draft_operator_return
+		(* <- return;; *);;
+	*);;
+*);;
